@@ -1,6 +1,6 @@
 use chumsky::prelude::*;
 
-use crate::isa::isa::*;
+use crate::asm::asm::*;
 
 // Type Aliases
 type I<'a> = &'a str;

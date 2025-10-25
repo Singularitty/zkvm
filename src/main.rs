@@ -1,13 +1,14 @@
 use std::fs;
 use chumsky::Parser;
 
-mod isa;
-use isa::parser::*;
+mod asm;
+mod emulator;
+use asm::parser::*;
 
 
 fn main() {
    
-    let test_program = fs::read_to_string("src/isa/tests/simple.s").expect("Couldn't open file simple.s");
+    let test_program = fs::read_to_string("src/tests/simple.s").expect("Couldn't open file simple.s");
 
     let parsed = program().parse(&test_program).into_result();
 
